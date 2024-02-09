@@ -1,0 +1,69 @@
+<div class="row">
+    <h2>Diagnóstico</h2>
+    <div class="col-xl-4 col-lg-5 col-md-6 col-12 mx-auto">
+        <h3>Formulario</h3>
+        <form class="row g-1 needs-validation form-solicitud" novalidate>
+            <div class="row g-1">
+                <div class="col-4">
+                    <label for="id_solicitud" class="col-form-label col-form-label-sm t">Id reparación</label>
+                    <input type="number" class="form-control form-control-sm load-inpu" id="id_solicitud"
+                        onchange="initializeForm(event)">
+                </div>
+                <div class="col-8">
+                    <label for="id_sector" class="col-form-label col-form-label-sm">Sector</label>
+                    <select class="form-select form-select-sm save-solicitud" id="id_sector" required disabled>
+                        <option selected value=""></option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <label for="id_subsector" class="col-form-label col-form-label-sm">Subsector</label>
+                    <select class="form-select form-select-sm save-solicitud" id="id_subsector" required disabled>
+                        <option selected value=""></option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <label for="codigo_maq" class="col-form-label col-form-label-sm">Código Máquina/Equipo</label>
+                    <input type="text" class="form-control form-control-sm" aria-describedby="descripcionMaquina"
+                        name="codigo_maq" id="codigo_maq" required disabled>
+                </div>
+                <div class="col-12">
+                    <label for="nombre_equipo" class="col-form-label col-form-label-sm">Nombre equipo</label>
+                    <textarea class="form-control form-control-sm" name="nombre_equipo" id="nombre_equipo" rows="2"
+                        required disabled></textarea>
+                </div>
+            </div>
+            <div class="row g-1 display-none" id="diagnosticForm">
+                <div class="col">
+                    <label for="diagnostico" class="col-form-label col-form-label-sm">Diagnóstico</label>
+                    <textarea class="form-control form-control-sm update" name="diagnostico" id="diagnostico"
+                        autocomplete="off" rows="3" required></textarea>
+                </div>
+                <div class="col-12">
+                    <label for="quien_diagnostica" class="col-form-label col-form-label-sm">Quien diagnostica</label>
+                    <select class="form-select form-select-sm update" id="quien_diagnostica" required>
+                        <option selected value=""></option>
+                    </select>
+                </div>
+            </div>
+            <div class="row g-1 btn-next-submit text-center">
+                <div class="col">
+                    <button type="button" class="btn btn-success"
+                        onclick="updateDiagnosticPart(event)">Guardar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-xl-8 col-lg-7 col-md-6 col-12 mx-auto">
+        <p class="lead text-center my-3">Reparaciones pendientes</p>
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th>Id</th>
+                </tr>
+            </thead>
+            <tbody id="idsForDiagnostic"></tbody>
+        </table>
+    </div>
+</div>

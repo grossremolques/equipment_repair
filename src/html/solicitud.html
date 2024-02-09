@@ -1,0 +1,68 @@
+<div class="row">
+    <h2>Solicitud de reparación</h2>
+    <div class="col-xl-4 col-lg-5 col-md-6 col-12 mx-auto">
+        <h3>Formulario</h3>
+        <form class="row g-1 needs-validation form-solicitud" novalidate>
+            <div class="row g-1">
+                <div class="col-12">
+                    <label for="tipo_reparacion" class="col-form-label col-form-label-sm">Tipo de reparación</label>
+                    <select class="form-select form-select-sm save-solicitud" id="tipo_reparacion" onchange="isEquipo(event)" required>
+                        <option selected value=""></option>
+                        <option value="Equipos y maquinarias">Equipos y maquinarias</option>
+                        <option value="Instalaciones">Instalaciones</option>
+                        <option value="Dispositivos">Dispositivos</option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <label for="id_sector" class="col-form-label col-form-label-sm">Sector</label>
+                    <select class="form-select form-select-sm save-solicitud" id="id_sector"
+                        onchange="loadSubsector(event)" required>
+                        <option selected value=""></option>
+                    </select>
+                </div>
+                <div class="col-6">
+                    <label for="id_subsector" class="col-form-label col-form-label-sm">Subsector</label>
+                    <select class="form-select form-select-sm save-solicitud" id="id_subsector" required>
+                        <option selected value=""></option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label for="codigo_maq" class="col-form-label col-form-label-sm">Código Máquina/Equipo</label>
+                    <input type="text" class="form-control form-control-sm save-solicitud"
+                        aria-describedby="descripcionMaquina" name="codigo_maq" id="codigo_maq"
+                        onchange="loadEquipo(event)" required>
+                </div>
+                <div class="col-12">
+                    <label for="nombre_equipo" class="col-form-label col-form-label-sm">Nombre equipo</label>
+                    <textarea class="form-control form-control-sm save-solicitud" name="nombre_equipo"
+                        id="nombre_equipo" autocomplete="off" rows="2" required></textarea>
+                </div>
+                <div class="col-12">
+                    <label for="situacion" class="col-form-label col-form-label-sm">Situación</label>
+                    <textarea class="form-control form-control-sm save-solicitud" name="situacion" id="situacion"
+                        autocomplete="off" rows="3" required></textarea>
+                </div>
+                <div class="col-auto">
+                    <label for="prioridad" class="col-form-label col-form-label-sm">Prioridad</label>
+                    <select class="form-select form-select-sm save-solicitud" name="prioridad" id="prioridad" required>
+                        <option selected value=""></option>
+                        <option value="Baja">Baja</option>
+                        <option value="Media">Media</option>
+                        <option value="Alta">Alta</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="quien_solicita" class="col-form-label col-form-label-sm">Quien_solicita</label>
+                    <select class="form-select form-select-sm save-solicitud" id="quien_solicita" required>
+                        <option selected value=""></option>
+                    </select>
+                </div>
+            </div>
+            <div class="row g-1 btn-next-submit text-center">
+                <div class="col">
+                    <button type="button" class="btn btn-success" onclick="saveRegister(event)">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

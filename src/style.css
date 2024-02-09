@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+}
+
+.group-auth-btn {
+    position: fixed;
+    bottom: 15px;
+}
+
+.container-main {
+    margin-top: 80px;
+}
+
+.nav-item {
+    cursor: pointer;
+}
+
+.invalidMessage {
+    color: red;
+}
+
+.display-none {
+    display: none;
+}
+
+.container-success {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-next-submit {
+    margin-top: 50px;
+}
+
+.card-menu {
+    border: 1px solid gray;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.card-menu-img {
+    width: 100%;
+    padding: 1rem;
+}
+
+.menu-acciones {
+    max-width: 900px;
+    margin: auto;
+}
+.loader-container {
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader {
+    text-align: center;
+}
+.container-img {
+    margin: auto;
+    width: 200px;
+    margin-bottom: 20px;
+}
+.container-img img{
+    width: 100%;
+}
+.table-btn-icon {
+    cursor: pointer;
+    border: 1px solid rgb(154, 151, 151);
+    background-color: rgb(230, 228, 228);
+    border-radius: .255rem;
+    padding: 0 .2rem;
+}
+table {
+    font-size: 0.95rem;
+}
+#formSolicitud {
+    max-width: 700px;
+    margin: auto;
+}

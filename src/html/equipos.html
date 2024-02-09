@@ -1,0 +1,104 @@
+<div class="row">
+    <h2>Equipos / Maquinas</h2>
+    <div class="col-xl-4 col-lg-5 col-md-6 col-12 mx-auto">
+        <form class="row g-1 needs-validation form-solicitud" novalidate>
+            <div class="row g-1 text-center mt-3">
+                <div class="col-6">
+                    <input type="radio" class="btn-check" name="acciones" id="agregar" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary w-100" for="agregar" id="optionAdd"
+                        onclick="initilizeForAction(event)">Agregar <i class="bi bi-plus-circle"></i></label>
+                </div>
+                <div class="col-6">
+                    <input type="radio" class="btn-check" name="acciones" id="editar" autocomplete="off">
+                    <label class="btn btn-outline-primary w-100" for="editar" onclick="initilizeForAction(event)">Editar
+                        <i class="bi bi-pencil-fill"></i></label>
+                </div>
+            </div>
+            <div class="row g-1">
+                <div class="col-6">
+                    <label for="codigo" class="col-form-label col-form-label-sm t">Código</label>
+                    <input type="text" class="form-control form-control-sm save-equipo" id="codigo"
+                        onchange="canUseCodigo(event)">
+                </div>
+                <div class="col-6">
+                    <label for="prioridad" class="col-form-label col-form-label-sm">Prioridad</label>
+                    <select class="form-select form-select-sm save-equipo" name="prioridad" id="prioridad" required
+                        disabled>
+                        <option selected value=""></option>
+                        <option value="Baja">Baja</option>
+                        <option value="Media">Media</option>
+                        <option value="Alta">Alta</option>
+                    </select>
+                </div>
+                <div class="col-12"></div>
+                <label for="nombre_equipo" class="col-form-label col-form-label-sm">Nombre equipo</label>
+                <textarea class="form-control form-control-sm save-equipo" name="nombre_equipo" id="nombre_equipo"
+                    rows="2" required disabled></textarea>
+            </div>
+            <div class="col-auto">
+                <label for="tipo" class="col-form-label col-form-label-sm">Tipo</label>
+                <select class="form-select form-select-sm save-equipo" name="tipo" id="tipo" required disabled>
+                    <option value="N/A">N/A</option>
+                    <option value="Eléctrico">Eléctrico</option>
+                    <option value="Mecanico">Mecanico</option>
+                    <option value="Manual">Manual</option>
+                    <option value="Neumatico">Neumatico</option>
+                    <option value="Hidraulico">Hidraulico</option>
+                    <option value="EXTINTOR BAJO PRECIÓN">EXTINTOR BAJO PRECIÓN</option>
+                    <option value="EXTINTOR BC (CO2)">EXTINTOR BC (CO2)</option>
+                    <option value="EXTINTOR ( HCFC )">EXTINTOR ( HCFC )</option>
+                    <option value="Electro hidraulico">Electro hidraulico</option>
+                    <option value="Electroneumatico">Electroneumatico</option>
+                    <option value="Gas natural">Gas natural</option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="activo" class="col-form-label col-form-label-sm">Activo</label>
+                <select class="form-select form-select-sm save-equipo" name="activo" id="activo" required disabled>
+                    <option value="Sí">Sí</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <label for="clasificacion" class="col-form-label col-form-label-sm t">Clasificación</label>
+                <input type="text" class="form-control form-control-sm save-equipo" id="clasificacion" required
+                    disabled>
+            </div>
+            <div class="col-6">
+                <label for="centro_costo" class="col-form-label col-form-label-sm t">Centro de costo</label>
+                <input type="text" class="form-control form-control-sm save-equipo" id="centro_costo" required disabled>
+            </div>
+
+            <div class="row g-1 btn-next-submit text-center mb-3">
+                <div class="col">
+                    <button id="btnSubmit" type="button" class="btn btn-success"
+                        onclick="saveEquipo(event)">Guardar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-xl-8 col-lg-7 col-md-6 col-12 mx-auto">
+        <input type="text" class="form-control form-control-sm" id="searchInputEquipos" placeholder="Escriba para filtar"  onkeyup="findCoincidence(event)">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre de equipo</th>
+                </tr>
+            </thead>
+            <tbody id="tableBodyEquipos"></tbody>
+        </table>
+        <div class="d-flex justify-content-between">
+            <div class="btn-group" role="group" aria-label="Basic example" id="pagination">
+                <button type="button" class="btn btn-outline-dark" id="prevPageEq" onclick="prevPageEq()"
+                    disabled>Anterior</button>
+                <button type="button" class="btn btn-outline-dark" id="nextPageEq"
+                    onclick="nextPageEq()">Siguiente</button>
+            </div>
+            <strong>
+                <p id="footPageEq">1</p>
+            </strong>
+        </div>
+
+    </div>
+</div>

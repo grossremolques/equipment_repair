@@ -1,0 +1,89 @@
+<h1 class="display-6 my-4 text-center">Registro de solicitudes de reparación</h1>
+<button class="btn btn-primary mb-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFilter" aria-controls="offcanvasFilter">
+    Filtrar <i class="bi bi-funnel-fill"></i>
+</button>
+<table class="table table-sm">
+    <thead id="headerTable">
+        <tr>
+            <th>Id</th>
+            <th>Fecha</th>
+            <th>Sector</th>
+            <th>Subsector</th>
+            <th>Código</th>
+            <th>Situación</th>
+            <th>Estado</th>
+            <th><i class="bi bi-eye-fill"></i></th>
+        </tr>
+    </thead>
+    <tbody id="tableBodyRegister">
+
+    </tbody>
+</table>
+<div class="d-flex justify-content-between">
+    <div class="btn-group" role="group" aria-label="Basic example" id="pagination">
+        <button type="button" class="btn btn-outline-dark" id="prevPage" onclick="prevPage()" disabled>Anterior</button>
+        <button type="button" class="btn btn-outline-dark" id="nextPage" onclick="nextPage()">Siguiente</button>
+    </div>
+    <strong>
+        <p id="footPage">1</p>
+    </strong>
+</div>
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasFilter" aria-labelledby="offcanvasFilterLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasFilterLabel">Opciones de Filtro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <form class="row g-1" id="formFilter">
+            <div class="col-12">
+                <label for="estado_filter" class="col-form-label col-form-label-sm">Estado</label>
+                <select id="estado_filter" name="estado" class="form-select form-select-sm filter-value">
+                  <option selected value="">Ninguno</option>
+                  <option value="Iniciado">Iniciado</option>
+                  <option value="Diagnósticado">Diagnósticado</option>
+                  <option value="Reparado">Reparado</option>
+                  <option value="Entregado">Entregado</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <label for="id_sector_filter" class="col-form-label col-form-label-sm">Sector</label>
+                <select class="form-select form-select-sm filter-value" id="id_sector_filter" name="id_sector"
+                    onchange="loadSubsector(event, 'id_subsector_filter')" required>
+                    <option selected value="">Ninguno</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <label for="id_subsector_filter" class="col-form-label col-form-label-sm">Subsector</label>
+                <select class="form-select form-select-sm filter-value" name="id_subsector" id="id_subsector_filter" required>
+                    <option selected value="">Ninguno</option>
+                </select>
+            </div>
+            <div class="col-12">
+                <label for="codigo_maq_filter" class="col-form-label col-form-label-sm">Equipo/Máquina</label>
+                <input class="form-control form-control-sm filter-value" name="codigo_maq" list="codigo_maqOptions" id="codigo_maq_filter" placeholder="Type to search...">
+                <datalist id="codigo_maqOptions">
+                </datalist>
+            </div>
+            <div class="col-6">
+                <label for="fromDate" class="col-form-label col-form-label-sm">Desde</label>
+                <input type="date" class="form-control form-control-sm" id="fromDate">
+            </div>
+            <div class="col-6">
+                <label for="toDate" class="col-form-label col-form-label-sm">Hasta</label>
+                <input type="date" class="form-control form-control-sm" id="toDate">
+            </div>
+            <div class="col-12 mt-3">
+              <button type="btn" class="btn btn-primary" id="search" onclick="filter(event)">Filtar</button>
+            </div>
+          </form>
+    </div>
+</div>
+<div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Solicitud de Reparación</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body" id="offcanvasBody">
+    ...
+  </div>
+</div>

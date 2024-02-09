@@ -1,0 +1,58 @@
+<div class="row">
+    <h2>Entrega</h2>
+    <div class="col-xl-4 col-lg-5 col-md-6 col-12 mx-auto">
+        <h3>Formulario</h3>
+        <form class="row g-1 needs-validation form-solicitud" novalidate>
+            <div class="row g-1">
+                <div class="col-2">
+                    <label for="id_solicitud" class="col-form-label col-form-label-sm t">Id</label>
+                    <input type="number" class="form-control form-control-sm load-inpu" id="id_solicitud"
+                        onchange="initializeFormEntrega(event)" required>
+                </div>
+                <div class="col-5">
+                    <label for="id_sector" class="col-form-label col-form-label-sm">Sector</label>
+                    <select class="form-select form-select-sm save-solicitud" id="id_sector" required disabled>
+                        <option selected value=""></option>
+                    </select>
+                </div>
+                <div class="col-5">
+                    <label for="id_subsector" class="col-form-label col-form-label-sm">Subsector</label>
+                    <select class="form-select form-select-sm save-solicitud" id="id_subsector" required disabled>
+                        <option selected value=""></option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label for="nombre_equipo" class="col-form-label col-form-label-sm">Nombre equipo</label>
+                    <textarea class="form-control form-control-sm" name="nombre_equipo" id="nombre_equipo" rows="2"
+                        required disabled></textarea>
+                </div>
+            </div>
+            <div class="row g-1 display-none" id="entregaForm">
+                <div class="col-12">
+                    <label for="responsable_entrega" class="col-form-label col-form-label-sm">Responsable de
+                        entrega</label>
+                    <select class="form-select form-select-sm update" name="responsable_entrega"
+                        id="responsable_entrega" required>
+                        <option selected value=""></option>
+                    </select>
+                </div>
+            </div>
+            <div class="row g-1 btn-next-submit text-center">
+                <div class="col">
+                    <button type="button" class="btn btn-success" onclick="updateEntregaPart(event)">Guardar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-xl-8 col-lg-7 col-md-6 col-12 mx-auto">
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th>Id</th>
+                </tr>
+            </thead>
+            <tbody id="idsForEntrega"></tbody>
+        </table>
+    </div>
+</div>
